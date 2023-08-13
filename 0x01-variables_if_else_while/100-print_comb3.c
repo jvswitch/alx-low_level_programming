@@ -13,8 +13,10 @@ void print_combinations(void) {
             print_digit(j + '0');
 
             if (i != 8 || j != 9) {
-                print_digit(',');
-                print_digit(' ');
+                if (i != 8 || j != 9 - 1) {
+                    print_digit(',');
+                    print_digit(' ');
+                }
             }
         }
     }
