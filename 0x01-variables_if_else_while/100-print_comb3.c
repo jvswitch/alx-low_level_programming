@@ -1,24 +1,20 @@
-#include <stdio.h>
+#include <unistd.h>
 
-/**
- * main - function to print combination of two numbers
- *
- * Return : 0 on success
- */
-
-void putchar(char c);
+void print_char(char c) {
+    write(1, &c, 1);
+}
 
 void print_combinations(void) {
     int i, j;
 
     for (i = 0; i < 9; i++) {
         for (j = i + 1; j <= 9; j++) {
-            putchar(i + '0');
-            putchar(j + '0');
+            print_char(i + '0');
+            print_char(j + '0');
 
             if (i != 8 || j != 9) {
-                putchar(',');
-                putchar(' ');
+                print_char(',');
+                print_char(' ');
             }
         }
     }
